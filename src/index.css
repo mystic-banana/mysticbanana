@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 75, 0, 130; /* Deep Indigo #4B0082 */
+    --color-secondary: 27, 26, 85; /* Cosmic Blue #1B1A55 */
+    --color-accent: 255, 215, 0; /* Gold #FFD700 */
+    --color-highlight: 80, 200, 120; /* Emerald #50C878 */
+    --color-background: 15, 15, 35; /* Dark background #0F0F23 */
+    --color-surface: 30, 30, 60; /* Surface #1E1E3C */
+    --color-error: 220, 38, 38; /* Red */
+    --color-success: 22, 163, 74; /* Green */
+    --color-warning: 234, 88, 12; /* Orange */
+  }
+
+  html {
+    @apply bg-background text-white;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+  }
+
+  h1 {
+    @apply text-3xl font-bold md:text-4xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl font-bold md:text-3xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl font-bold md:text-2xl lg:text-3xl;
+  }
+
+  h4 {
+    @apply text-lg font-bold md:text-xl;
+  }
+
+  a {
+    @apply text-accent hover:text-accent/80 transition-colors;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background/50;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-accent/30 rounded-full hover:bg-accent/50 transition-colors;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-2 rounded-full font-medium transition-all duration-300 inline-flex items-center justify-center;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90 focus:ring-2 focus:ring-accent/50;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-background hover:bg-accent/90 focus:ring-2 focus:ring-primary/50;
+  }
+
+  .btn-outline {
+    @apply border-2 border-accent text-accent hover:bg-accent/10 focus:ring-2 focus:ring-accent/30;
+  }
+
+  .card {
+    @apply bg-surface p-6 rounded-2xl shadow-lg backdrop-blur-sm border border-white/5;
+  }
+
+  .input {
+    @apply bg-surface border border-white/10 rounded-lg px-4 py-2 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all;
+  }
+
+  .badge {
+    @apply px-2 py-1 text-xs rounded-full font-medium;
+  }
+
+  .badge-primary {
+    @apply bg-primary/30 text-white;
+  }
+
+  .badge-accent {
+    @apply bg-accent/30 text-accent;
+  }
+  
+  .cosmic-gradient {
+    @apply bg-gradient-to-br from-primary via-secondary to-background;
+  }
+  
+  .gold-gradient {
+    @apply bg-gradient-to-r from-accent to-amber-500;
+  }
+}
