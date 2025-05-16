@@ -18,6 +18,7 @@ export interface Database {
           birth_place: string | null
           zodiac_sign: string | null
           is_premium: boolean
+          role: string | null
           created_at: string
           updated_at: string
         }
@@ -29,6 +30,7 @@ export interface Database {
           birth_place?: string | null
           zodiac_sign?: string | null
           is_premium?: boolean
+          role?: string | null
           created_at?: string
           updated_at?: string
         }
@@ -40,6 +42,7 @@ export interface Database {
           birth_place?: string | null
           zodiac_sign?: string | null
           is_premium?: boolean
+          role?: string | null
           created_at?: string
           updated_at?: string
         }
@@ -67,6 +70,15 @@ export interface Database {
           created_at?: string
         }
       }
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      [_ in never]: never
+    }
+    Enums: {
+      [_ in never]: never
     }
   }
 }
